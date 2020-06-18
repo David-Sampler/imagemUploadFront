@@ -1,0 +1,64 @@
+<br>
+
+<div class="container"
+    style="display: flex; justify-content: center; align-items: center;">
+    <div class="row">
+        <div class="col-4" *ngFor='let img of imagens'>
+            <img style="border-radius: 50px;" [src]="img.url" alt="">
+        </div>
+    </div>
+</div>
+
+
+<div class="jumbotron jumbotron-fluid m-4" > 
+
+        
+        <div class="container" >
+            
+            <div class="form-group">
+                <input type="file" class="form-control-file" id="exampleFormControlFile1" (change)='UploadImage($event)'>
+            </div>
+
+            <form [formGroup]='formulario'>
+
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Nome</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1"  placeholder="Nome" formControlName="nome">
+                            <small id="emailHelp" class="form-text text-muted">Digite o nome a ser cadastrado</small>
+        
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Apelido</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter apelido" formControlName="apelido">
+                            <small id="emailHelp" class="form-text text-muted">Entre com apelido.</small>
+        
+                        </div>
+                    </div>
+                </div>
+                
+        
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Endereço</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" formControlName="endereco">
+                    <small id="emailHelp" class="form-text text-muted">Insira o Endereço corretamente por favor.</small>
+                </div>
+
+               
+                
+            </form>
+            <div style="display: flex;margin-top: 40px;">
+                <button style="width: 50%;" class="btn btn-info btn-lg " (click)="Salvar()">Salvar</button>
+                <button style="width: 50%;" class="btn btn-dark btn-lg ml-2" (click)="InserirCliente()">Cancelar</button>
+            </div>
+            
+
+        </div>
+    
+   
+    
+  </div>
+
